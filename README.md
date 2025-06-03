@@ -1,5 +1,7 @@
 # Python Asteroids Clone
 
+![Asteroids clone gameplay showcase](asteroids.gif)
+
 This is a clone of the game Asteroids which I made with Python. I made it to solidify my understanding of the OOP paradigm.
 
 You can fly around and shoot at asteroids. If your bullet hits the asteroid, it will split the asteroid into two smaller asteroids (unless it was already small). If you hit an asteroid, the program will end and that's game over!
