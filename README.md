@@ -7,6 +7,7 @@ You can fly around and shoot at asteroids. If your shot hits the asteroid, it wi
 ## How to run it
 
 First clone the repository:
+
 `git clone https://github.com/fortunatebit/asteroids`
 
 Create and activate a Python virtual environment (recommended):
