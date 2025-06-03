@@ -1,7 +1,7 @@
 import pygame
+from asteroid import *
 from constants import *
 from player import Player
-
 
 
 def main():
@@ -14,8 +14,12 @@ def main():
 
     updatables = pygame.sprite.Group()
     drawables = pygame.sprite.Group()
+    asteroids = pygame.sprite.Group()
+
     Player.containers = (updatables, drawables)
     player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT /2)
+
+    Asteroid.containers = (asteroids, updatables, drawables)
 
     dt = 0
     clock = pygame.time.Clock()
