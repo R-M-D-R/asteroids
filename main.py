@@ -4,7 +4,7 @@ from constants import *
 from player import Player
 from asteroid import Asteroid
 from asteroidfield import AsteroidField
-
+from bullet import Bullet
 
 def main():
     pygame.init()
@@ -24,6 +24,8 @@ def main():
     Asteroid.containers = (asteroids, updatables, drawables)
     AsteroidField.containers = (updatables)
     asteroid_field = AsteroidField()
+
+    Bullet.containers = (updatables, drawables)
 
     dt = 0
     clock = pygame.time.Clock()
