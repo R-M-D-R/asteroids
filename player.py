@@ -37,7 +37,6 @@ class Player(CircleShape):
         if keys[pygame.K_SPACE]:
             self.shoot()
         
-        # if self.cooldown_timer > 0:
         self.cooldown_timer -= dt
 
     def move(self, dt):
