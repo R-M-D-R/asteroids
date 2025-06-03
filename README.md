@@ -10,13 +10,17 @@ First clone the repository:
 `git clone https://github.com/fortunatebit/asteroids`
 
 Create and activate a Python virtual environment (recommended):
+
 `python3 -m venv venv`
+
 `source venv/bin/activate`
 
 Install the requirements from the provided "requirements.txt":
+
 `pip install -r requirements.txt`
 
 Finally, run main.py!
+
 `python3 main.py`
 
 ## Controls
