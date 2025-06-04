@@ -46,6 +46,7 @@ def main():
                 print("Game over!")
                 print(f"Score: {score}")
                 sys.exit()
+        
         for asteroid in asteroids:
             for bullet in bullets:
                 if bullet.is_colliding(asteroid):
