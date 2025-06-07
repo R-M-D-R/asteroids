@@ -29,3 +29,7 @@ Finally, run main.py!
 ## Controls
 
 To move around the screen, use WASD. To shoot bullets, press spacebar. That's it!
+
+## Assets
+- Music is from https://opengameart.org/content/space-boss-battle-theme
+- Sounds are from https://opengameart.org/content/512-sound-effects-8-bit-style
