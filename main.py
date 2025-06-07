@@ -5,6 +5,7 @@ from player import Player
 from asteroid import Asteroid
 from asteroidfield import AsteroidField
 from bullet import Bullet
+import audio
 
 # Game states
 GAME_PLAYING = 0
@@ -38,6 +39,8 @@ def draw_game_over_screen(screen, score):
     draw_text(screen, "Press R to play again or ESC to quit", 36, (200, 200, 200), SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2 + 60)
 
 def reset_game():
+    audio.start_background_music()
+
     """Reset all game objects for a new game"""
     # Clear all sprite groups
     updatables = pygame.sprite.Group()
@@ -78,6 +81,7 @@ def main():
 
     dt = 0
 
+
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -104,6 +108,8 @@ def main():
                 if asteroid.is_colliding(player):
                     print("Game over!")
                     print(f"Final Score: {score}")
+                    audio.stop_background_music()
+                    audio.play_game_over_sound()
                     game_state = GAME_OVER
                     break
             
@@ -126,7 +132,7 @@ def main():
             # Still draw the game objects in background
             for drawable in drawables:
                 drawable.draw(screen)
-            
+
             # Draw game over screen on top
             draw_game_over_screen(screen, score)
 
