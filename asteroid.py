@@ -2,6 +2,7 @@ import pygame
 import random
 from constants import *
 from circleshape import CircleShape
+import audio
 
 
 class Asteroid(CircleShape):
@@ -16,6 +17,14 @@ class Asteroid(CircleShape):
 
     def split(self):
         self.kill()
+
+        if self.radius > 50:
+            audio.play_explosion_sound("big")
+        elif self.radius > 20:
+            audio.play_explosion_sound("medium")
+        else:
+            audio.play_explosion_sound("small")
+
         if self.radius <= ASTEROID_MIN_RADIUS:
             return
         
