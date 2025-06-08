@@ -10,7 +10,7 @@ class Bullet(CircleShape):
         self.velocity = velocity
     
     def draw(self, screen):
-        pygame.draw.circle(screen, (255, 255, 255), (self.position.x, self.position.y), BULLET_RADIUS, width=2)
+        pygame.draw.circle(screen, (255, 30, 77), (self.position.x, self.position.y), BULLET_RADIUS) #, width=2
     
     def update(self, dt):
         # Once the bullets go beyond the border of the screen, they are deleted
