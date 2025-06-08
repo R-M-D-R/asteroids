@@ -118,7 +118,7 @@ def main():
             for asteroid in asteroids:
                 for bullet in bullets:
                     if bullet.is_colliding(asteroid):
-                         # If it's a Terry asteroid, points are deducted
+                        # If it's a Terry asteroid, points are deducted
                         if isinstance(asteroid, Terry):
                             score -= 1
                         else:
