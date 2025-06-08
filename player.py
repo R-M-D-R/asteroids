@@ -40,6 +40,7 @@ class Player(CircleShape):
         self.cooldown_timer -= dt
 
     def move(self, dt):
+        # Check if, when moving, the player crosses any screen borders. If they do, loop them around to the opposite side
         if self.position.x - self.radius < 0:
             self.position = pygame.Vector2(SCREEN_WIDTH - self.radius, self.position.y)
 
