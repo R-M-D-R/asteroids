@@ -34,7 +34,7 @@ class AsteroidField(pygame.sprite.Sprite):
         self.spawn_timer = 0.0
 
     def spawn(self, radius, position, velocity):
-        asteroid = Asteroid(position.x, position.y, radius) if random.uniform(0, 1) < .9 else Terry(position.x, position.y, radius)
+        asteroid = Asteroid(position.x, position.y, radius) if random.uniform(0, 1) < .99 else Terry(position.x, position.y, radius)
         asteroid.velocity = velocity
 
     def update(self, dt):
