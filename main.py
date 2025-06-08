@@ -1,11 +1,12 @@
 import pygame
+import audio
 import sys
 from constants import *
 from player import Player
 from asteroid import Asteroid
 from asteroidfield import AsteroidField
 from bullet import Bullet
-import audio
+from terry import Terry
 
 # Game states
 GAME_PLAYING = 0
@@ -117,9 +118,14 @@ def main():
             for asteroid in asteroids:
                 for bullet in bullets:
                     if bullet.is_colliding(asteroid):
+                         # If it's a Terry asteroid, points are deducted
+                        if isinstance(asteroid, Terry):
+                            score -= 1
+                        else:
+                            score += 1
+                        
                         asteroid.split()
                         bullet.kill()
-                        score += 1
 
             # Draw all game objects
             for drawable in drawables:
