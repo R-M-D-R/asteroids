@@ -5,7 +5,7 @@ from asteroid import Asteroid
 class Terry(Asteroid):
     def __init__(self, x, y, radius):
         super().__init__(x, y, radius)
-        self.imageSource = pygame.image.load("./terry.png").convert_alpha()
+        self.imageSource = pygame.image.load("./assets/images/terry.png").convert_alpha()
         self.image = pygame.transform.scale(self.imageSource, (self.radius*2, self.radius*2))
     
     def draw(self, screen):
