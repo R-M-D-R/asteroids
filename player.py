@@ -40,6 +40,18 @@ class Player(CircleShape):
         self.cooldown_timer -= dt
 
     def move(self, dt):
+        if self.position.x - self.radius < 0:
+            self.position = pygame.Vector2(SCREEN_WIDTH - self.radius, self.position.y)
+
+        if self.position.x + self.radius > SCREEN_WIDTH:
+            self.position = pygame.Vector2(0 + self.radius, self.position.y)
+
+        if self.position.y - self.radius < 0:
+            self.position = pygame.Vector2(self.position.x, SCREEN_HEIGHT - self.radius)
+
+        if self.position.y + self.radius > SCREEN_HEIGHT:
+            self.position = pygame.Vector2(self.position.x, 0 + self.radius)
+
         forward = pygame.Vector2(0, 1).rotate(self.rotation)
         self.position += forward * PLAYER_SPEED * dt
 
