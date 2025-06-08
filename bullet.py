@@ -13,4 +13,10 @@ class Bullet(CircleShape):
         pygame.draw.circle(screen, (255, 255, 255), (self.position.x, self.position.y), BULLET_RADIUS, width=2)
     
     def update(self, dt):
+        # Once the bullets go beyond the border of the screen, they are deleted
+        if (self.position.x - BULLET_RADIUS < 0 or 
+            self.position.x + BULLET_RADIUS > SCREEN_WIDTH or
+            self.position.y - BULLET_RADIUS < 0 or
+            self.position.y + BULLET_RADIUS > SCREEN_HEIGHT):
+                self.kill()
         self.position += self.velocity * dt
